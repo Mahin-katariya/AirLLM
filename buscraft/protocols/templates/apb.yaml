@@ -1,0 +1,19 @@
+name: APB
+profile: APB
+required_signals:
+  - PCLK
+  - PRESETn
+  - PSEL
+  - PENABLE
+  - PWRITE
+  - PADDR
+  - PWDATA
+  - PRDATA
+  - PREADY
+  - PSLVERR
+failure_modes:
+  - PSLVERR during data phase
+  - PREADY never asserted
+checklist:
+  - Verify PSEL decode and address map
+  - Check wait states and error response timing

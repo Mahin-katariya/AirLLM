@@ -1,0 +1,16 @@
+name: FIFO
+profile: FIFO
+required_signals:
+  - clk
+  - rst
+  - wr_en
+  - rd_en
+  - full
+  - empty
+  - almost_full
+failure_modes:
+  - Overflow / underflow
+  - Metastable or gray-code error in async FIFO
+checklist:
+  - Compare wr/rd rates vs depth
+  - Check simultaneous full and write
