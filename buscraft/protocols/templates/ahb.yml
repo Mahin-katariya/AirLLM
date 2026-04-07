@@ -1,0 +1,24 @@
+name: AHB
+profile: AHB
+required_signals:
+  - HCLK
+  - HRESETn
+  - HADDR
+  - HBURST
+  - HMASTLOCK
+  - HPROT
+  - HSIZE
+  - HNONSEC
+  - HTRANS
+  - HWDATA
+  - HRDATA
+  - HREADYOUT
+  - HRESP
+failure_modes:
+  - ERROR response from slave (HRESP = 1)
+  - Address phase decoding error
+  - Slave locked up (HREADYOUT held low)
+checklist:
+  - Verify HTRANS transitions (NONSEQ, SEQ, IDLE, BUSY)
+  - Check HREADY combination for data phase completion
+  - Confirm address aligns with HSIZE

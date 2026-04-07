@@ -1,0 +1,25 @@
+name: AXI4-Lite
+profile: AXI4_LITE
+required_signals:
+  - ACLK
+  - ARESETn
+  - AWVALID
+  - AWREADY
+  - WVALID
+  - WREADY
+  - BVALID
+  - BREADY
+  - ARVALID
+  - ARREADY
+  - RVALID
+  - RREADY
+failure_modes:
+  - Unmapped address → SLVERR/DECERR
+  - Handshake stall timeout
+  - WSTRB mismatch on narrow writes
+checklist:
+  - Verify decoder hit for transaction address
+  - Check BRESP/RRESP encoding vs spec
+  - Confirm reset release before first transaction
+decode_hints:
+  resp_slverr: "BRESP or RRESP == 2'b10"

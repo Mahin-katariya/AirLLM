@@ -1,0 +1,17 @@
+name: NoC baseline
+profile: NOC
+required_signals:
+  - clk
+  - rst
+  - valid
+  - ready
+  - flit_data
+  - credit
+failure_modes:
+  - Credit deadlock
+  - Routing misconfiguration
+  - VC starvation
+checklist:
+  - Trace credit return path
+  - Verify route table / port enables
+  - Check head-of-line blocking
